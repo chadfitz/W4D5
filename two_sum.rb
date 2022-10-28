@@ -60,6 +60,26 @@ end
 #O(2 * (n log n)) => O(n log n)
 
 # debugger
-arr = [0, 1, 5, 7]
-p okay_two_sum?(arr, 6) # => should be true
-p okay_two_sum?(arr, 10) # => should be false
+# arr = [0, 1, 5, 7]
+# p okay_two_sum?(arr, 6) # => should be true
+# p okay_two_sum?(arr, 10) # => should be false
+
+#hash.has_key? or hash.has_value? array.include?
+def two_sum?(arr, target)
+    hash = Hash.new(0)
+    arr.each do |ele|   #O(n)
+        hash[ele] += 1
+    end
+    arr.each do |ele|   #O(n)
+        hash[ele] -= 1
+        return true if hash.has_key?(target-ele) && hash[target-ele] > 0 #O(2)??
+    end    
+    false
+end
+# 2n + 2 => O(n)??
+
+# arr = [0, 1, 5, 7]
+# p two_sum?(arr, 6) # => should be true
+# p two_sum?(arr, 10) # => should be false
+arr = [0, 1, 5, 5,  7]
+p two_sum?(arr, 10) # => should be true
