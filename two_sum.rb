@@ -83,3 +83,14 @@ end
 # p two_sum?(arr, 10) # => should be false
 arr = [0, 1, 5, 5,  7]
 p two_sum?(arr, 10) # => should be true
+
+
+
+
+
+# arrays are values stored by indices
+# hashes are values stored by keys
+
+#[1,2,3,4,5,6] {:a=>1, :b=>1}
+#array[1]
+#hash.has_key?(:b)
